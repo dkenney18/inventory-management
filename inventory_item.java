@@ -21,6 +21,7 @@ public class inventory_item {
 	static Boolean discontinue;
 	static Boolean in_stock;
 	static Double price;
+	static int max_id;
 	
 	public static void set_initial_values() {
 		item_name = "";
@@ -32,6 +33,7 @@ public class inventory_item {
 		discontinue = false;
 		in_stock = false;
 		price = 0.0;
+		max_id = 100;
 	}
 	
 	public static void set_id() {
@@ -130,7 +132,7 @@ public class inventory_item {
 			JOptionPane.showMessageDialog(null, String.format("item is in stock %s", discontinue));
 		}
 		if (discontinue == false) {
-			JOptionPane.showMessageDialog(null,String.format("item is not stock %s", discontinue));
+			JOptionPane.showMessageDialog(null,String.format("item is not in stock %s", discontinue));
 		}
 	}
 	public static void get_price() {
@@ -156,7 +158,6 @@ public class inventory_item {
 		get_in_stock();
 		get_discontinue();
 		get_price();
-		
 		
 		
 	}
