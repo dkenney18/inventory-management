@@ -138,28 +138,25 @@ public class inventory_item {
 	}
 	public static void main(String[] args) throws MalformedURLException{
 		set_initial_values();
-		/*set_id();
+		set_id();
 		set_stock();
 		set_alert_number();
 		set_item_name();
 		set_item_description();
 		set_img_url();
-		**/
 		set_in_stock();
 		set_discontinue();
-		/*set_price();
+		set_price();
 		get_id();
 		get_stock();
 		get_alert_number();
 		get_item_name();
 		get_item_description();
 		get_img_url();
-		*/
 		get_in_stock();
 		get_discontinue();
-		/*
 		get_price();
-		*/
+		
 		
 		
 	}
