@@ -137,6 +137,13 @@ public class inventory_item {
 	public static Double get_item_price() {
 		return price;
 	}
+	public void increment_count(int num) {
+		stock += num;
+	}
+	
+	public void decrement_count(int num) {
+		stock -= num;
+	}
 	//end the value getting
 	public static void setup_item_values() {
 		inventory_item.set_initial_values();
