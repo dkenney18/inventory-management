@@ -64,20 +64,20 @@ public class inventory_item {
 	public static void set_in_stock() {
 		String input;
 		input = JOptionPane.showInputDialog("Enter if the item is in stock (y/n)");
-		if (input == "y") {
+		if (input.toString().toLowerCase().equals("y")) {
 			in_stock = true;
 		}
-		if (input == "n") {
+		if (input.toString().toLowerCase().equals("n")) {
 			in_stock = false;
 		}
 	}
 	public static void set_discontinue() {
 		String input;
 		input = JOptionPane.showInputDialog("Enter if the item is in discontuned (y/n)");
-		if (input == "y") {
+		if (input.toString().toLowerCase().equals("y")) {
 			discontinue = true;
 		}
-		if (input == "n") {
+		if (input.toString().toLowerCase().equals("n")) {
 			discontinue = false;
 		}
 	}
@@ -86,20 +86,21 @@ public class inventory_item {
 		input = JOptionPane.showInputDialog("Enter a price for the item: ");
 		price = Double.parseDouble(input);
 	}
-	public static void get_id() {
-		JOptionPane.showMessageDialog(null, String.format("you entered: %d", item_id));
+	// starting the functions to get the id of the Item
+	public static int get_item_id() {
+		return item_id;
 	}
-	public static void get_stock() {
-		JOptionPane.showMessageDialog(null, String.format("you entered: %d", stock));
+	public static int get_stock() {
+		return stock;
 	}
-	public static void get_alert_number() {
-		JOptionPane.showMessageDialog(null, String.format("you entered: %d", alert_number));
+	public static int get_alert_number() {
+		return alert_number;
 	}
-	public static void get_item_name() {
-		JOptionPane.showMessageDialog(null, String.format("you entered: %s", item_name));
+	public static String get_item_name() {
+		return item_name;
 	}
-	public static void get_item_description() {
-		JOptionPane.showMessageDialog(null, String.format("you entered: %s", description));
+	public static String get_item_description() {
+		return description;
 	}
 	public static void get_img_url() throws MalformedURLException {
 		
@@ -119,45 +120,30 @@ public class inventory_item {
 	    f.setLocation(200,200);
 	    f.setVisible(true);
 	}
-	public static void get_in_stock() {
-		if (in_stock == true) {
-			JOptionPane.showMessageDialog(null, String.format("item is in stock %s", in_stock));
-		}
-		if (in_stock == false) {
-			JOptionPane.showMessageDialog(null,String.format("item is not in stock %s", in_stock));
-		}
+	public static Boolean get_in_stock() {
+		return in_stock;
 	}
-	public static void get_discontinue() {
-		if (discontinue == true ) {
-			JOptionPane.showMessageDialog(null, String.format("item is in stock %s", discontinue));
-		}
-		if (discontinue == false) {
-			JOptionPane.showMessageDialog(null,String.format("item is not in stock %s", discontinue));
-		}
+	public static Boolean get_discontinue() {
+		return discontinue;
 	}
-	public static void get_price() {
-		JOptionPane.showMessageDialog(null, price);
+	public static Double get_item_price() {
+		return price;
+	}
+	public static void info_pane() throws MalformedURLException {
+		JOptionPane.showMessageDialog(null, "Item Name: " + get_item_name().toString() + "\n Item description: " + get_item_description().toString() + "\n Item price: " + get_item_price().toString() + "\n Item id: " + get_item_id() + "\n Items in stock: " + get_stock() + "\n alert when this many is left in stock: " + get_alert_number() + "\n Item in stock?: " + get_in_stock().toString() + "\n Item discontinued?: " + get_discontinue().toString());
 	}
 	public static void main(String[] args) throws MalformedURLException{
-		set_initial_values();
+		set_initial_values();		
+		set_item_name();
+		set_item_description();
+		set_price();
 		set_id();
 		set_stock();
 		set_alert_number();
-		set_item_name();
-		set_item_description();
 		set_img_url();
 		set_in_stock();
 		set_discontinue();
-		set_price();
-		get_id();
-		get_stock();
-		get_alert_number();
-		get_item_name();
-		get_item_description();
-		get_img_url();
-		get_in_stock();
-		get_discontinue();
-		get_price();
+		info_pane();
 		
 		
 	}
