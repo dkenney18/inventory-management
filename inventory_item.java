@@ -22,7 +22,7 @@ public class inventory_item {
 	static Boolean in_stock;
 	static Double price;
 	static int max_id;
-	
+	// setting up the values for the class
 	public static void set_initial_values() {
 		item_name = "";
 		description = "";
@@ -35,32 +35,38 @@ public class inventory_item {
 		price = 0.0;
 		max_id = 100;
 	}
-	
+	// set item id as a string that the user wnters
 	public static void set_id() {
 		String input;		
 		input = JOptionPane.showInputDialog("Enter Item Id: ");
 		item_id = Integer.parseInt(input);
 	}
+	// set the number of item in stock
 	public static void set_stock() {
 		String input;		
 		input = JOptionPane.showInputDialog("Enter the number of item you have on hand: ");
 		stock = Integer.parseInt(input);
 		
 	}
+	// set the low inventory alert number. 
 	public static void set_alert_number() {
 		String input;		
 		input = JOptionPane.showInputDialog("Enter number you want to alerted when that many is in stock: ");
 		alert_number = Integer.parseInt(input);
 	}
+	// set items name
 	public static void set_item_name() {
 		item_name = JOptionPane.showInputDialog("Enter Item Name: ");
 	}
+	// set the description of the item
 	public static void set_item_description() {
 		description = JOptionPane.showInputDialog("Enter Item description: ");
 	}
+	// set the string path to the image. only URLs are accepted
 	public static void set_img_url() {
 		img_source = JOptionPane.showInputDialog("Enter the Image URL: ");
 	}
+	// set if the item is in stock
 	public static void set_in_stock() {
 		String input;
 		input = JOptionPane.showInputDialog("Enter if the item is in stock (y/n)");
@@ -71,6 +77,7 @@ public class inventory_item {
 			in_stock = false;
 		}
 	}
+	// set if we sell the item anymore
 	public static void set_discontinue() {
 		String input;
 		input = JOptionPane.showInputDialog("Enter if the item is in discontuned (y/n)");
@@ -81,12 +88,13 @@ public class inventory_item {
 			discontinue = false;
 		}
 	}
+	// set the prick of the item like $$.$$
 	public static void set_price() {
 		String input;
 		input = JOptionPane.showInputDialog("Enter a price for the item: ");
 		price = Double.parseDouble(input);
 	}
-	// starting the functions to get the id of the Item
+	// starting the functions to get the values of the Item
 	public static int get_item_id() {
 		return item_id;
 	}
@@ -129,9 +137,12 @@ public class inventory_item {
 	public static Double get_item_price() {
 		return price;
 	}
+	//end the value getting
+	//below is the "info sheet" of the item
 	public static void info_pane() throws MalformedURLException {
 		JOptionPane.showMessageDialog(null, "Item Name: " + get_item_name().toString() + "\n Item description: " + get_item_description().toString() + "\n Item price: " + get_item_price().toString() + "\n Item id: " + get_item_id() + "\n Items in stock: " + get_stock() + "\n alert when this many is left in stock: " + get_alert_number() + "\n Item in stock?: " + get_in_stock().toString() + "\n Item discontinued?: " + get_discontinue().toString());
 	}
+	// call everything now
 	public static void main(String[] args) throws MalformedURLException{
 		set_initial_values();		
 		set_item_name();
