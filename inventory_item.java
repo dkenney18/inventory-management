@@ -152,7 +152,7 @@ public class inventory_item {
 	}
 	//below is the "info sheet" of the item
 	public static void info_pane() throws MalformedURLException {
-		JOptionPane.showMessageDialog(null, "Item Name: " + get_item_name().toString() + "\n Item description: " + get_item_description().toString() + "\n Item price: " + get_item_price().toString() + "\n Item id: " + get_item_id() + "\n Items in stock: " + get_stock() + "\n alert when this many is left in stock: " + get_alert_number() + "\n Item in stock?: " + get_in_stock().toString() + "\n Item discontinued?: " + get_discontinue().toString());
+		JOptionPane.showMessageDialog(null, "Item Name: " + inventory_item.get_item_name().toString() + "\n Item description: " + inventory_item.get_item_description().toString() + "\n Item price: " + inventory_item.get_item_price().toString() + "\n Item id: " + inventory_item.get_item_id() + "\n Items in stock: " + inventory_item.get_stock() + "\n alert when this many is left in stock: " + inventory_item.get_alert_number() + "\n Item in stock?: " + inventory_item.get_in_stock().toString() + "\n Item discontinued?: " + inventory_item.get_discontinue().toString());
 	}
 	// call everything now
 	public static void main(String[] args) throws MalformedURLException{
