@@ -35,7 +35,7 @@ public class inventory_item {
 		price = 0.0;
 		max_id = 100;
 	}
-	// set item id as a string that the user wnters
+	// set item id as a string that the user enters
 	public static void set_id() {
 		String input;		
 		input = JOptionPane.showInputDialog("Enter Item Id: ");
@@ -88,7 +88,7 @@ public class inventory_item {
 			discontinue = false;
 		}
 	}
-	// set the prick of the item like $$.$$
+	// set the price of the item like $$.$$
 	public static void set_price() {
 		String input;
 		input = JOptionPane.showInputDialog("Enter a price for the item: ");
