@@ -138,24 +138,26 @@ public class inventory_item {
 		return price;
 	}
 	//end the value getting
+	public static void setup_item_values() {
+		inventory_item.set_initial_values();
+		inventory_item.set_item_name();
+		inventory_item.set_item_description();
+		inventory_item.set_id();
+		inventory_item.set_price();
+		inventory_item.set_stock();
+		inventory_item.set_alert_number();
+		inventory_item.set_in_stock();
+		inventory_item.set_discontinue();
+		
+	}
 	//below is the "info sheet" of the item
 	public static void info_pane() throws MalformedURLException {
 		JOptionPane.showMessageDialog(null, "Item Name: " + get_item_name().toString() + "\n Item description: " + get_item_description().toString() + "\n Item price: " + get_item_price().toString() + "\n Item id: " + get_item_id() + "\n Items in stock: " + get_stock() + "\n alert when this many is left in stock: " + get_alert_number() + "\n Item in stock?: " + get_in_stock().toString() + "\n Item discontinued?: " + get_discontinue().toString());
 	}
 	// call everything now
 	public static void main(String[] args) throws MalformedURLException{
-		set_initial_values();		
-		set_item_name();
-		set_item_description();
-		set_price();
-		set_id();
-		set_stock();
-		set_alert_number();
-		set_img_url();
-		set_in_stock();
-		set_discontinue();
+		setup_item_values();
 		info_pane();
-		
 		
 	}
 }
